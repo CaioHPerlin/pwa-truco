@@ -29,13 +29,13 @@ let i = 0;
     }, 1000);
 });
 
-const beginMatch = (name1, name2) => {
+const beginMatch = () => {
     game.style.display = 'grid';
     scoreboard.style.display = 'grid';
     wins.style.display = 'grid';
 
-    document.getElementById('team1-name').innerText = name1;
-    document.getElementById('team2-name').innerText = name2;
+    document.getElementById('team1-name').innerText = team1;
+    document.getElementById('team2-name').innerText = team2;
 };
 
 const updateScore = () => {
@@ -57,10 +57,10 @@ const win = (team) => {
 
     if (team == 1) {
         wins1++;
-        logs.innerText = `Vitória do ${team1}!`
+        logs.innerText = `Vitória de ${team1}!`
     } else {
         wins2++;
-        logs.innerText = `Vitória do ${team2}!`
+        logs.innerText = `Vitória de ${team2}!`
     }
 
     updateScore();
@@ -84,5 +84,25 @@ form.addEventListener('submit', (e) => {
     team1 = form.team1.value;
     team2 = form.team2.value;
 
-    beginMatch(team1, team2);
+    beginMatch();
 });
+
+const reset = () => {
+    team1 = '';
+    team2 = '';
+    score1 = 0;
+    score2 = 0;
+    wins1 = 0;
+    wins2 = 0;
+    updateScore();
+
+    game.style.display = 'none';
+    scoreboard.style.display = 'none';
+    wins.style.display = 'none';
+
+    document.getElementById('team1-name').innerText = '';
+    document.getElementById('team2-name').innerText = '';
+    form.team1.value = '';
+    form.team2.value = '';
+    logs.innerText = '';
+}

@@ -10,7 +10,14 @@ span{
     color: red;
 }
 
-#score, #game, #wins{
+#game{
+    display: none;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#score, #wins{
     display: none;
     grid-template-columns: 50% 50%;
 }
