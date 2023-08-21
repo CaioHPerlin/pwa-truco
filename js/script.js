@@ -11,6 +11,8 @@ const scoreboard = document.getElementById('score');
 const wins = document.getElementById('wins');
 const logs = wins.children[3];
 const symbols = ['♦️', '♥️', '♣️', '♠️'];
+const cards = [...'🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂼🂽🂾🂡🂢🂣🂤🂥🂦🂧🂨🂩🂪🂫🂬🂭🂮🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃌🃍🃎🃑🃒🃓🃔🃕🃖🃗🃘🃙🃚🃛🃜🃝🃞🂠🃟']
+const jsConfetti = new JSConfetti()
 let team1 = '';
 let team2 = '';
 let score1 = 0;
@@ -46,6 +48,12 @@ const updateScore = () => {
 const win = (team) => {
     score1 = 0;
     score2 = 0;
+    console.log(cards)
+    jsConfetti.addConfetti({
+        emojis: cards,
+        emojiSize: 50,
+        confettiNumber: 15
+    })
 
     if (team == 1) {
         wins1++;
