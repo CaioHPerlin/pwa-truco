@@ -48,11 +48,10 @@ const updateScore = () => {
 const win = (team) => {
     score1 = 0;
     score2 = 0;
-    console.log(cards)
     jsConfetti.addConfetti({
-        emojis: cards,
-        emojiSize: 50,
-        confettiNumber: 15
+        emojis: symbols,
+        emojiSize: 35,
+        confettiNumber: 10
     })
 
     if (team == 1) {
