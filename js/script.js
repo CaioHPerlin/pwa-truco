@@ -1,3 +1,10 @@
+window.onload = () => {
+    'use strict';
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+    }
+}
+
 const form = document.getElementsByTagName('form')[0];
 const game = document.getElementById('game');
 const scoreboard = document.getElementById('score');
